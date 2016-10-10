@@ -49,5 +49,67 @@ variable to change it.
 Add a crontab line to run periodically _pdbcacher_ command. 
  
 To register a new repository you should edit _pdbcacher/config.json_ and insert
-a line with the field required: name, type, url, owner. Every time _pdbcacher_
-is launched it will re-create the database.
+a line with all the fields required for the new repository: 
+ * name
+ * type
+ * url
+ * owner
+
+Every time _pdbcacher_ is launched it will re-create the database.
+
+
+### Examples
+
+
+#### Search ports by name
+
+**URL**: http://localhost:8000/ports?search=vim
+```json
+[
+   {
+      "repo" : "df",
+      "_id" : "57fae8a22c5b4d07a1b7caba",
+      "name" : "qt5"
+   },
+   {
+      "repo" : "opt",
+      "_id" : "57fae8a32c5b4d07a1b7d688",
+      "name" : "qt5"
+   }
+]
+```
+
+
+#### Show Repositories
+
+**URL**: http://localhost:8000/repos
+```json
+[
+   {
+      "owner" : "kori at openmailbox dot org",
+      "_id" : "57fae8a12c5b4d07a1b7c8da",
+      "url" : "https://raw.githubusercontent.com/6c37/crux-ports/3.2/",
+      "name" : "6c37",
+      "pubkey" : null,
+      "type" : "httpup"
+   },
+   {
+      "owner" : "kori at openmailbox dot org",
+      "_id" : "57fae8a12c5b4d07a1b7c8db",
+      "url" : "https://raw.githubusercontent.com/6c37/crux-ports-git/3.2/",
+      "name" : "6c37-git",
+      "pubkey" : null,
+      "type" : "httpup"
+   },
+   {
+      "owner" : "alan+crux at mizrahi dot com dot ve",
+      "_id" : "57fae8a12c5b4d07a1b7c8dc",
+      "url" : "http://www.mizrahi.com.ve/crux/pkgs/",
+      "name" : "alan",
+      "pubkey" : null,
+      "type" : "httpup"
+   }
+]
+```
+
+
