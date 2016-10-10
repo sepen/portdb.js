@@ -58,32 +58,13 @@ a line with all the fields required for the new repository:
 Every time _pdbcacher_ is launched it will re-create the database.
 
 
-### Examples
+## Examples
 
 
-#### Search ports by name
-
-**URL**: http://localhost:8000/ports?search=vim
-```json
-[
-   {
-      "repo" : "df",
-      "_id" : "57fae8a22c5b4d07a1b7caba",
-      "name" : "qt5"
-   },
-   {
-      "repo" : "opt",
-      "_id" : "57fae8a32c5b4d07a1b7d688",
-      "name" : "qt5"
-   }
-]
-```
-
-
-#### Show Repositories
+### Show Repositories
 
 **URL**: http://localhost:8000/repos
-```json
+```
 [
    {
       "owner" : "kori at openmailbox dot org",
@@ -108,6 +89,67 @@ Every time _pdbcacher_ is launched it will re-create the database.
       "name" : "alan",
       "pubkey" : null,
       "type" : "httpup"
+   },
+   
+   ...
+]
+```
+
+
+### Search ports by name
+
+**URL**: http://localhost:8000/ports?search=vim
+```
+[
+   {
+      "repo" : "df",
+      "_id" : "57fae8a22c5b4d07a1b7caba",
+      "name" : "qt5"
+   },
+   {
+      "repo" : "opt",
+      "_id" : "57fae8a32c5b4d07a1b7d688",
+      "name" : "qt5"
+   }
+]
+```
+
+
+### Find duplicates
+
+**URL**: http://localhost:8000/ports?dups=true
+```
+[
+   {
+      "count" : 9,
+      "_id" : {
+         "name" : "yajl"
+      },
+      "items" : [
+         "57fae8a32c5b4d07a1b7d88d",
+         "57fae8a22c5b4d07a1b7d50f",
+         "57fae8a22c5b4d07a1b7d415",
+         "57fae8a22c5b4d07a1b7cf88",
+         "57fae8a22c5b4d07a1b7d4f9",
+         "57fae8a22c5b4d07a1b7ca96",
+         "57fae8a32c5b4d07a1b7d9ed",
+         "57fae8a32c5b4d07a1b7d545",
+         "57fae8a22c5b4d07a1b7c9f8"
+      ]
+   },
+   {
+      "count" : 6,
+      "_id" : {
+         "name" : "python3"
+      },
+      "items" : [
+         "57fae8a32c5b4d07a1b7dae3",
+         "57fae8a32c5b4d07a1b7d53a",
+         "57fae8a32c5b4d07a1b7d9b4",
+         "57fae8a22c5b4d07a1b7cfd6",
+         "57fae8a22c5b4d07a1b7cf79",
+         "57fae8a22c5b4d07a1b7ccd5"
+      ]
    }
 ]
 ```
