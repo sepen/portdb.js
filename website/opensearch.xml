@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+xmlns:moz="http://mozilla.org/2006/browser/search">
+  <ShortName>CRUX portdb</ShortName>
+  <Description>Search for CRUX ports</Description>
+  <Tags>linux crux portdb ports</Tags>
+  <Contact>lucas@crux.nu</Contact>
+  <Url type="text/html" method="GET" template="http://crux.nu/portdb/">
+    <Param name="a" value="search"/>
+    <Param name="q" value="{searchTerms}"/>
+  </Url>
+  <LongName>CRUX: PortDB Search</LongName>
+  <Image height="16" width="16" type="image/png">http://crux.nu/favicon.ico</Image>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>

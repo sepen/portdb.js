@@ -1,11 +1,11 @@
-# portdb.js
+#portdb.js
 
-## About
+##About
 
-portdb.js is a small API that can be useful as a backend for CRUX's portdb.
+portdb.js is a small HTTP API that can be useful as a backend for CRUX's portdb.
 
 
-## Quickstart
+##Quickstart
 
 
 ### Requirements
@@ -15,7 +15,7 @@ portdb.js is a small API that can be useful as a backend for CRUX's portdb.
  * NPM (Node Package Manager)
 
 
-### Initialize MongoDB database
+###Initialize MongoDB database
 
 Start MongoDB daemon and run _pdbcacher_. It will create the database:
 ```
@@ -31,11 +31,11 @@ By default mongodb URI is _mongodb://localhost:27017/portdb32_. To change
 this behaviour you can use _MONGODB_URI_ environment variable.
 
 
-### Run the application
+###Run the application
 
 Start the application with this command:
 ```
-$ npm run portdb
+$ npm run portdb &
 
 Listening on 8000
 ```
@@ -44,7 +44,7 @@ By default TCP port 8000 is used.  You can use _APP_PORT_ environment
 variable to change it.
 
 
-### Update MongoDB database
+###Update MongoDB database
 
 Add a crontab line to run periodically _pdbcacher_ command. 
  
@@ -58,10 +58,22 @@ a line with all the fields required for the new repository:
 Every time _pdbcacher_ is launched it will re-create the database.
 
 
-## Output examples
+##Website
+
+I modified the original portdb website written in PHP to use backend calls. 
+To start the website:
+```
+$ npm run website &
+```
+By default TCP port 8080 is used. 
+Note that this command runs a PHP built-in webserver which is used for
+development purposes only.
 
 
-### Show Repositories
+##Output examples
+
+
+###Show Repositories
 
  * http://localhost:8000/repos
 ```
@@ -96,7 +108,7 @@ Every time _pdbcacher_ is launched it will re-create the database.
 ```
 
 
-### Search ports by name
+###Search ports by name
 
  * http://localhost:8000/ports?search=vim
 ```
@@ -115,7 +127,7 @@ Every time _pdbcacher_ is launched it will re-create the database.
 ```
 
 
-### Find duplicates
+###Find duplicates
 
  * http://localhost:8000/ports?dups=true
 ```
@@ -153,5 +165,4 @@ Every time _pdbcacher_ is launched it will re-create the database.
    }
 ]
 ```
-
 

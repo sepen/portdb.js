@@ -11,6 +11,7 @@
   },
   "scripts": {
     "portdb": "npm install --production && node portdb.js",
-    "pdbcacher": "npm run pdbcacher --prefix pdbcacher"
+    "pdbcacher": "npm run pdbcacher --prefix pdbcacher",
+    "website": "php -S localhost:8080 -t website" 
   }
 }
