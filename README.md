@@ -58,12 +58,12 @@ a line with all the fields required for the new repository:
 Every time _pdbcacher_ is launched it will re-create the database.
 
 
-## Examples
+## Output examples
 
 
 ### Show Repositories
 
-**URL**: http://localhost:8000/repos
+ * http://localhost:8000/repos
 ```
 [
    {
@@ -98,7 +98,7 @@ Every time _pdbcacher_ is launched it will re-create the database.
 
 ### Search ports by name
 
-**URL**: http://localhost:8000/ports?search=vim
+ * http://localhost:8000/ports?search=vim
 ```
 [
    {
@@ -117,7 +117,7 @@ Every time _pdbcacher_ is launched it will re-create the database.
 
 ### Find duplicates
 
-**URL**: http://localhost:8000/ports?dups=true
+ * http://localhost:8000/ports?dups=true
 ```
 [
    {
