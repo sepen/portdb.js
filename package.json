@@ -1,0 +1,16 @@
+{
+  "name": "portdb",
+  "main": "portdb.js",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.10",
+    "request": "^2.75.0",
+    "xml2json": "^0.10.0"
+  },
+  "scripts": {
+    "portdb": "npm install --production && node portdb.js",
+    "pdbcacher": "npm run pdbcacher --prefix pdbcacher"
+  }
+}

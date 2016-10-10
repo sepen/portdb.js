@@ -1,0 +1,12 @@
+{
+  "name": "pdbcacher",
+  "main": "pdbcacher.js",
+  "private": true,
+  "dependencies": {
+    "mongodb": "^2.2.10",
+    "request": "^2.75.0"
+  },
+  "scripts": {
+    "pdbcacher": "npm install --production && node pdbcacher.js"
+  }
+}
