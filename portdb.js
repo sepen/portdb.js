@@ -68,12 +68,12 @@ app.get('/ports', (req, res) => {
 app.get('/repos', (req, res) => {
   var name = req.query.name
   if (name) {
-    db.collection('repos').find({"name": name}).toArray((err, result) => {
+    db.collection('repos').find({"name": name}).sort({name: 1}).toArray((err, result) => {
       if (err) return console.log(err)
       res.json(result)
     })
   } else {
-    db.collection('repos').find().sort({name: 1}).toArray((err, result) => {
+    db.collection('repos').find().toArray((err, result) => {
       if (err) return console.log(err)
       res.json(result)
     })

@@ -12,6 +12,7 @@ function repos() {
       <th>Type</th>
       <th>Owner</th>
       <th>URL</th>
+      <th>Public Key</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,18 @@ function repos() {
       <td>'.$repo->type.'</td>
       <td>'.$repo->owner.'</td>
       <td>'.$repo->url.'</td>
+    ';
+    if (!empty($repo->pubkey)) {
+      $shortkey = substr($repo->pubkey,0,5).'..'.substr($repo->pubkey,-5);
+      echo '
+      <td><a href="http://crux.nu/keys/'.$repo->name.'.pub">'.$shortkey.'</a></td>
+      ';
+    } else {
+      echo '
+      <td></td>
+      ';
+    }
+    echo '
     </tr>
     ';
   }
