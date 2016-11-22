@@ -40,42 +40,30 @@ $ npm run portdb &
 Listening on 8000
 ```
 
-By default TCP port 8000 is used.  You can use _APP_PORT_ environment
+By default TCP port 8000 is used.  You can use ``APP_PORT`` environment
 variable to change it.
 
 
 ###Update MongoDB database
 
-Add a crontab line to run periodically _pdbcacher_ command. 
- 
-To register a new repository you should edit _pdbcacher/config.json_ and insert
+Add a crontab line to run periodically ``pdbcacher`` command. 
+  
+To register a new repository you should edit ``pdbcacher/config.json`` and insert
 a line with all the fields required for the new repository: 
  * name
  * type
  * url
  * owner
 
-Every time _pdbcacher_ is launched it will re-create the database.
+Every time ``pdbcacher`` is launched it will re-create the database.
 
-
-##Website
-
-I modified the original portdb website written in PHP to use backend calls. 
-To start the website:
-```
-$ npm run website &
-```
-By default TCP port 8080 is used. 
-Note that this command runs a PHP built-in webserver which is used for
-development purposes only.
 
 
 ##Output examples
 
-
 ###Show Repositories
 
- * http://localhost:8000/repos
+ * http://API_URL/repos
 ```
 [
    {
@@ -110,7 +98,7 @@ development purposes only.
 
 ###Search ports by name
 
- * http://localhost:8000/ports?search=vim
+ * http:/:/API_URL/ports?search=vim
 ```
 [
    {
@@ -129,7 +117,7 @@ development purposes only.
 
 ###Find duplicates
 
- * http://localhost:8000/ports?dups=true
+ * http://API_URL/ports?dups=true
 ```
 [
    {
@@ -164,5 +152,23 @@ development purposes only.
       ]
    }
 ]
+```
+
+##Website
+
+I modified the original portdb website written in PHP to use backend calls. 
+  
+To start the website:
+```
+$ npm run website &
+```
+By default TCP port 8080 is used. 
+Note that this command runs a PHP built-in webserver which is used for
+development purposes only.  
+  
+If you want to use the values in ``website/config.php`` you need to add a line to
+``/etc/hosts`` like this:
+```
+127.0.0.1 portdb.crux.nu
 ```
 
