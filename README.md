@@ -5,15 +5,17 @@
 This project is intended to create an HTTP API for CRUX's portdb.  
   
 The difference with the current portdb is the separation in two parts:
-_frontend_ and _backend._ Another difference is the database, which changes from _SQLite_ to
-_MongoDB_ and thus to a _NoSQL_ database.  
+_frontend_ and _backend._ Another difference is the database, which changes from
+_SQLite_ to _MongoDB_ and thus to a _NoSQL_ database.  
+  
 The _backend_, written in _NodeJS_, starts a server which listens for HTTP requests,
 queries the database, and returns the result in JSON format. This favors the use
 of portdb for CLI tools and applications.  
-The _frontend_ maintains the original design and style of the current portdb but
-the _PHP_ code has been adapted to make requests to the backend instead of querying
-the database directly. And maybe in the future, the frontend could be written in
-_Javascript_ for browsers that support it. This would remove workload from the server.
+  
+The _frontend_ maintains the original website design and style but the _PHP_ code has
+been adapted to make requests to the backend instead of querying the database directly.
+And maybe in the future, the frontend could be written in _Javascript_ for browsers
+that support it. This would remove workload from the server.
 
 
 ##Quickstart
@@ -38,8 +40,8 @@ Update collections (#repos: 55). Please wait...
 Number of ports: 4875
 ```
 
-By default mongodb URI is _mongodb://localhost:27017/portdb32_. To change
-this behaviour you can use _MONGODB_URI_ environment variable.
+By default mongodb URI is ``mongodb://localhost:27017/portdb32``. To change
+this behaviour you can use ``MONGODB_URI`` environment variable.
 
 
 ###Run the application
