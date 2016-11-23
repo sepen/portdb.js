@@ -2,7 +2,18 @@
 
 ##About
 
-portdb.js is a small HTTP API that can be useful as a backend for CRUX's portdb.
+This project is intended to create an HTTP API for CRUX's portdb.  
+  
+One difference with the current portdb is the separation in _frontend_ and
+_backend._ Another difference is the database, which changes from _SQLite_ to
+_MongoDB_ and thus to a _NoSQL_ database.  
+The _backend_, written in _NodeJS_, starts a server which listens for HTTP requests,
+queries the database, and returns the result in JSON format. This favors the use
+of portdb for CLI tools and applications.  
+The _frontend_ maintains the original design and style of the current portdb but
+the _PHP_ code has been adapted to make requests to the backend instead of querying
+the database directly. In the future, the frontend could be written in _Javascript_
+for browsers that support it. This would remove workload from the server.
 
 
 ##Quickstart
@@ -17,7 +28,7 @@ portdb.js is a small HTTP API that can be useful as a backend for CRUX's portdb.
 
 ###Initialize MongoDB database
 
-Start MongoDB daemon and run _pdbcacher_. It will create the database:
+Start MongoDB daemon and run ``pdbcacher``. It will create the database:
 ```
 $ npm run pdbcacher
 
