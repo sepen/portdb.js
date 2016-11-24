@@ -111,7 +111,7 @@ Every time ``pdbcacher`` is launched it will re-create the database.
 
 ###Search ports by name
 
- * http:/:/API_URL/ports?search=vim
+ * http://API_URL/ports?search=vim
 ```
 [
    {
@@ -169,7 +169,7 @@ Every time ``pdbcacher`` is launched it will re-create the database.
 
 ##Website
 
-I modified the original portdb website written in PHP to use backend calls. 
+I adjust the original portdb website written in PHP to use backend calls. 
   
 To start the website:
 ```
