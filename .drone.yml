@@ -1,0 +1,15 @@
+pipeline:
+  backend:
+    image: node:8.6.0
+    commands:
+      - yarn run portdb
+
+  frontend:
+    image: php:cli
+    commands:
+      - yarn run website
+
+  cacher:
+    image: node:8.6.0
+    commands:
+      - yarn run pdbcacher
