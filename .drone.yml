@@ -13,3 +13,8 @@ pipeline:
     image: node:8.6.0
     commands:
       - yarn run pdbcacher
+
+services:
+    mongo:
+      image: mongo:3.0
+      command: [ --smallfiles ]
