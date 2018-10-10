@@ -1,6 +1,6 @@
-#portdb.js
+# portdb.js
 
-##About
+## About
 
 This project is intended to create an HTTP API for CRUX's portdb.  
   
@@ -18,7 +18,7 @@ And maybe in the future, the frontend could be written in _Javascript_ for brows
 that support it. This would remove workload from the server.
 
 
-##Quickstart
+## Quickstart
 
 
 ### Requirements
@@ -28,7 +28,7 @@ that support it. This would remove workload from the server.
  * NPM (Node Package Manager)
 
 
-###Initialize MongoDB database
+### Initialize MongoDB database
 
 Start MongoDB daemon and run ``pdbcacher``. It will create the database:
 ```
@@ -44,7 +44,7 @@ By default mongodb URI is ``mongodb://localhost:27017/portdb32``. To change
 this behaviour you can use ``MONGODB_URI`` environment variable.
 
 
-###Run the application
+### Run the application
 
 Start the application with this command:
 ```
@@ -57,7 +57,7 @@ By default TCP port 8000 is used.  You can use ``APP_PORT`` environment
 variable to change it.
 
 
-###Update MongoDB database
+### Update MongoDB database
 
 Add a crontab line to run periodically ``pdbcacher`` command. 
   
@@ -72,9 +72,9 @@ Every time ``pdbcacher`` is launched it will re-create the database.
 
 
 
-##Output examples
+## Output examples
 
-###Show Repositories
+### Show Repositories
 
  * http://API_URL/repos
 ```
@@ -109,7 +109,7 @@ Every time ``pdbcacher`` is launched it will re-create the database.
 ```
 
 
-###Search ports by name
+### Search ports by name
 
  * http://API_URL/ports?search=vim
 ```
@@ -128,7 +128,7 @@ Every time ``pdbcacher`` is launched it will re-create the database.
 ```
 
 
-###Find duplicates
+### Find duplicates
 
  * http://API_URL/ports?dups=true
 ```
@@ -167,7 +167,7 @@ Every time ``pdbcacher`` is launched it will re-create the database.
 ]
 ```
 
-##Website
+## Website
 
 I adjust the original portdb website written in PHP to use backend calls. 
   
