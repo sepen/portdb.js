@@ -2,7 +2,7 @@ const httpreq = require('request')
 const exec = require('child_process').exec
 const mongodb = require('mongodb')
 const MongoClient = mongodb.MongoClient
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portdb32'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portdb'
 const config = require('./config.json')
 const repos = config.repos
 

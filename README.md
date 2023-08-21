@@ -40,7 +40,7 @@ Update collections (#repos: 55). Please wait...
 Number of ports: 4875
 ```
 
-By default mongodb URI is ``mongodb://localhost:27017/portdb32``. To change
+By default mongodb URI is ``mongodb://localhost:27017/portdb``. To change
 this behaviour you can use ``MONGODB_URI`` environment variable.
 
 

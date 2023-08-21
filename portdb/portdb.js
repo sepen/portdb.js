@@ -4,7 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const APP_PORT = process.env.APP_PORT || 8000
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portdb32'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/portdb'
 
 var db
 

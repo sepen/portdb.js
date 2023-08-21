@@ -5,13 +5,12 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "mongodb": "^2.2.10",
+    "mongodb": "^3.1.13",
     "request": "^2.75.0",
     "xml2json": "^0.10.0"
   },
   "scripts": {
-    "portdb": "npm install --production && node portdb.js",
-    "pdbcacher": "npm run pdbcacher --prefix pdbcacher",
-    "website": "php -S 127.0.0.1:8080 -t website"
+    "install-deps": "npm install --production",
+    "start": "node portdb.js"
   }
 }

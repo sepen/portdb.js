@@ -7,6 +7,7 @@
     "request": "^2.75.0"
   },
   "scripts": {
-    "pdbcacher": "npm install --production && node pdbcacher.js"
+    "install-deps": "npm install --production",
+    "start": "node pdbcacher.js"
   }
 }
