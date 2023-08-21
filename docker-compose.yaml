@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  svc-mongodb:
+    image: bitnami/mongodb
+    container_name: svc-mongodb
+    restart: always
+    networking: host
+    ports:
+      - "${CNT_BIND-127.0.0.1:27017}:27017/tcp"
+
+  svc-pdbcacher:
+    depends_on:
+      - svc-mongodb
+    build:
+      context: .
+      dockerfile: Dockerfile.pdbcacher
+    links:
+      - svc-mongodb
+
+  svc-portdb:
+    depends_on:
+      - svc-mongodb
+      - svc-pdbcacher
+    build:
+      context: .
+      dockerfile: Dockerfile.portdb
+    links:
+      - svc-mongodb
+    ports:
+      - "${CNT_BIND-127.0.0.1:8000}:8000/tcp"
+
+  svc-website:
+    depends_on:
+      - svc-portdb
+    build:
+      context: .
+      dockerfile: Dockerfile.website
+    ports:
+      - "${CNT_BIND-127.0.0.1:8080}:8080/tcp"

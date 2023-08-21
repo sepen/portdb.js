@@ -1,0 +1,13 @@
+# pdbcacher
+
+FROM yarnpkg/node-yarn:node7
+
+ENV MONGODB_URI=mongodb://localhost:27017/portdb
+ENV SERVICE_DIR=/opt/pdbcacher
+
+WORKDIR ${SERVICE_DIR}
+
+COPY pdbcacher/ ./
+RUN yarn install
+
+CMD ["yarn", "start"]

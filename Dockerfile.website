@@ -1,0 +1,12 @@
+# website
+
+FROM php:alpine
+
+ENV SERVICE_DIR=/opt/website
+
+WORKDIR ${SERVICE_DIR}
+
+COPY website/ ./
+
+EXPOSE 8080
+CMD ["php", "-S", "127.0.0.1:8080", "-t", "/opt/website"]
